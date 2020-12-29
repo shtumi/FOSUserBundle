@@ -13,6 +13,7 @@ namespace FOS\UserBundle\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
+use Doctrine\ORM\EntityManager;
 use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManager as BaseUserManager;
 use FOS\UserBundle\Util\CanonicalFieldsUpdater;
@@ -38,7 +39,7 @@ class UserManager extends BaseUserManager
      * @param ObjectManager            $om
      * @param string                   $class
      */
-    public function __construct(PasswordUpdaterInterface $passwordUpdater, CanonicalFieldsUpdater $canonicalFieldsUpdater, ObjectManager $om, $class)
+    public function __construct(PasswordUpdaterInterface $passwordUpdater, CanonicalFieldsUpdater $canonicalFieldsUpdater, EntityManager $om, $class)
     {
         parent::__construct($passwordUpdater, $canonicalFieldsUpdater);
 
